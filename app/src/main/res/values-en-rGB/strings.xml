@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Poll</string>
+    <string name="textView">Name:</string>
+    <string name="editTextTextPersonName">Your Name...</string>
+    <string name="textView2">Favourite operating system:</string>
+    <string name="textView3">Specialization:</string>
+    <string name="switch1">Anonymous</string>
+    <string name="textView4">Hours of study:</string>
+    <string name="botonValidar">Validate</string>
+    <string name="botonReiniciar">Restart</string>
+    <string name="botonContar">Count</string>
+    <string name="botonResumen">Summary</string>
+</resources>

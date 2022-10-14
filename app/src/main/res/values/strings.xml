@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Encuesta</string>
+    <string name="textView">Nombre:</string>
+    <string name="editTextTextPersonName">Tu Nombre...</string>
+    <string name="textView2">Sistema operativo Favorito:</string>
+    <string name="textView3">Especialidad:</string>
+    <string name="switch1">Anónimo</string>
+    <string name="textView4">Horas de estudio:</string>
+    <string name="botonValidar">Validar</string>
+    <string name="botonReiniciar">Reiniciar</string>
+    <string name="botonContar">Cuantas</string>
+    <string name="botonResumen">Resumen</string>
+</resources>
