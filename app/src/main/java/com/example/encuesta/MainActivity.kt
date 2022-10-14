@@ -43,7 +43,77 @@ class MainActivity : AppCompatActivity() {
                 radio2.isChecked -> msg = radio2.text.toString()
                 radio3.isChecked -> msg = radio3.text.toString()
             }
-        }}
+            var marcas = "Especialidad/es:"
+            if (marca1.isChecked()) {
+                marcas += " DAM "
+            }
+            if (marca2.isChecked()) {
+                marcas += " ASIR  "
+            }
+            if (marca3.isChecked()) {
+                marcas += " DAW "
+            }
+            listaEncuestas.add(Encuesta(nombre.text.toString(),msg,marcas,barra.progress))
+            //oculto.setText(oculto.text.toString()+nombre.text.toString()+" "+" "+msg+ " "+marcas+" "+"Horas: " +textoBarra.text.toString()+System.getProperty("line.separator"))
+
+
+            nombre.setText("")
+            nombre.isEnabled=true
+            anon.isChecked=false
+            radio1.isChecked=false
+            radio2.isChecked=false
+            radio3.isChecked=false
+            marca1.isChecked=false
+            marca2.isChecked=false
+            marca3.isChecked=false
+            barra.progress=0
+        }
+
+        //este es el codigo de la barra
+
+        barra.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+                textoBarra.setText(barra.progress.toString())
+            }
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+            }
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+
+            }
+        })
+        var miBoton2: Button = findViewById(R.id.botonReiniciar)
+        miBoton2.setOnClickListener() {
+            listaEncuestas.clear()
+            nombre.setText("")
+            nombre.isEnabled=true
+            anon.isChecked=false
+            radio1.isChecked=false
+            radio2.isChecked=false
+            radio3.isChecked=false
+            marca1.isChecked=false
+            marca2.isChecked=false
+            marca3.isChecked=false
+            barra.progress=0
+            oculto.setText("")
+            resumen.setText("")
+        }
+        var miBoton3: Button = findViewById(R.id.botonContar)
+        miBoton3.setOnClickListener() {
+
+            Toast.makeText(this, "Hay "+listaEncuestas.size.toString()+" encuesta/s", Toast.LENGTH_LONG).show()
+        }
+        var miBoton4: Button = findViewById(R.id.botonResumen)
+        miBoton4.setOnClickListener() {
+
+            oculto.text = ""
+            for(i in 0..listaEncuestas.size-1){
+
+                oculto.setText(oculto.text.toString()+listaEncuestas[i].Nombre+", "+listaEncuestas[i].sistema+", "+listaEncuestas[i].especialidad+", Horas: "+listaEncuestas[i].horas.toString()+System.getProperty("line.separator"))
+
+            }
+            resumen.setText(oculto.text)
+        }
+    }
+
 
 }
-
